@@ -2,6 +2,7 @@
 const { boomify } = require('../../utils');
 
 const serverError = (err, req, res, next) => {
+  console.log("err is ",err,req);
   const errorMessage = err.statusCode
     ? err
     : boomify(500, 'Internal Server Error', 'Something went wrong');
